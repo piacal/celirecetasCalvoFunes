@@ -1,0 +1,21 @@
+
+/*HEADER*/
+
+.menuHeader{
+    background-color: $colorTitulo;
+    border: solid;
+}
+
+Header nav ul li {
+    margin: 0 10px;
+    
+}
+
+.navbar-brand{
+    color: rgb(16, 35, 59);
+    font-style: italic;
+}
+
+.navbar-nav{
+    margin-left: 25%;
+}

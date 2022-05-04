@@ -1,46 +1,60 @@
-/* let prodPremezcla= "premezcla";
-let prodGalletas= "galletas";
-let prodYerba= "yerba";
+//INGRESO A LA PAGINA COMO ESTUDIANTE O NO
 
-let cantPremezcla = 3;
-let cantGalletas = 4;
-let cantYerba = 4;
+let inscricionCurso = prompt("¿Usted está inscripto a un curso?");
 
-const precioPremezcla = 300;
-const precioGalletas = 100;
-const precioYerba = 600;
+if (inscricionCurso === "si"){
+    let usuario = prompt ("Ingrese usuario");
 
-function compra(producto){
-    switch(producto) {
-
-        case "prodPremezcla":
-            subTotal = cantPremezcla * precioPremezcla;
-        break;
-
-        case "prodGalletas":
-            subTotal = cantGalletas * precioGalletas;
-        break
-
-        case "prodYerba":
-            subTotal = cantYerba * precioYerba;
-        break
-
-        default: 
-            alert("Ingrese producto existente");
+    while (usuario != "piacalvo"){
+        alert ("Usuario incorrecto, ingrese nuevamente");
+        usuario = prompt ("Ingrese usuario");
+    }
+        
+    let contrasena = prompt ("Ingrese contraseña");
+    let intentos = 0; 
+        
+    while (contrasena != "0000"){
+        alert ("Contraseña invalida, intente nuevamente");
+        contrasena = prompt ("Ingrese Contraseña");
+    }
+        
+        alert ("Usted ha ingresado con exito")
     }
 
-    return subTotal;
-}
+// SI NO ESTA INSCRIPTO A NINGUN CURSO --> DAR LA POSIBILIDAD DE AVERIGUAR PRECIO, SINO DEJAR INGRESAR PARA VER RECETAS
 
-console.log("El precio total de premezcla es de " + "$" + compra("prodPremezcla"));
-console.log("El precio total de galletas es de " + "$" + compra("prodGalletas"));
-console.log("El precio total de Yerba es de " + "$" + compra("prodYerba"));
+if (inscricionCurso === "no"){
+    const INSCRIPCION = 50;
 
-let total = 0
-total = total + (cantPremezcla * precioPremezcla) + (cantGalletas * precioGalletas) + (cantYerba * precioYerba);
-console.log("El precio a pagar por tu compra es de " + "$" + total)
-*/
+    let tiposCurso = [
+        {tipo: "Gastronomia", precio: 100},
+        {tipo: "Cocineritos", precio: 200},
+        {tipo: "Panaderia", precio: 150},
+        {tipo: "Pasteleria", precio: 150},
+    ]
+    
+    let averiguarCurso = prompt("¿Quiere averiguar el precio de los cursos?")
+    if(averiguarCurso === "si"){
+    let curso = prompt("¿Que curso quieres hacer? ¿Gastronomia, Cocineritos, Panaderia ó Pasteleria?");
+    
+        if(curso !== "Gastronomia" && curso !== "Cocineritos" && curso !== "Panaderia" && curso !== "Pasteleria"){
+        
+            alert ("Ingrese un curso válido");
+            curso = prompt ("¿Que curso quieres hacer? ¿Gastronomia, Cocineritos, Panaderia ó Pasteleria?")
+        }
+    
+    let seleccionCurso = tiposCurso.find(x => x.tipo === curso);
+    
+    let resultado = (seleccionCurso.precio) + INSCRIPCION;
+    
+    alert (`El curso que usted eligio es ${curso} y el precio es de ${resultado}`);
+    }
+    if(averiguarCurso === "no"){
+        alert("Bienvenido a Celirecetas, usted podra ver todas las recetas que tenemos disponibles");
+    }
+} 
 
+//FILTROS PARA LA SECCION RECETAS 
 
 class recetas {
     constructor (nombre, ingredientes, preparacion, tiempo, tipo) {
@@ -86,6 +100,6 @@ for(const recetas of recetaslista){
         }
     }
 }
-   
-    
-    
+
+
+

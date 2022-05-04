@@ -1,0 +1,229 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+/*HEADER*/
+.menuHeader {
+  background-color: #F0E5CF;
+  border: solid; }
+
+Header nav ul li {
+  margin: 0 10px; }
+
+.navbar-brand {
+  color: #10233b;
+  font-style: italic; }
+
+.navbar-nav {
+  margin-left: 25%; }
+
+/*FOOTER*/
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black; }
+
+.p_footer {
+  color: white; }
+
+.bi-facebook {
+  color: #6161d6;
+  font-size: 30px; }
+
+.bi-instagram {
+  color: #b642b6;
+  font-size: 30px; }
+
+.bilogo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+@media screen and (max-width: 750px) {
+  .listaul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  /*INDEX*/
+  /*ELEMENTOS SECCION QUIENES SOMOS */
+  .elementoQuienesSomos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .img_quienessomos {
+    width: 90%;
+    margin: 20px; }
+  Main section div h2 {
+    transform: rotate(-35deg);
+    text-align: left; }
+  .elm2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px; }
+  /*NOTICIAS*/
+  /*PARA LA SECCION 1, reeutilice el elementoquienessomos, ya que necesitaba generar la misma estructura*/
+  .iframeEnfermedad {
+    width: 80%;
+    margin: 30px; }
+  /*Seccion 2 - ANMAT*/
+  .linksanmat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .alinksanmat {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+    font-style: italic; } }
+
+@media screen and (min-width: 751px) {
+  .listaul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; }
+  /*INDEX*/
+  /*ELEMENTOS SECCION QUIENES SOMOS */
+  Main section div h2 {
+    text-align: center;
+    margin-bottom: 20px; }
+  .img_quienessomos {
+    width: 100%;
+    margin: 20px; }
+  .elementoQuienesSomos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+  /*NOTICIAS*/
+  /*PARA LA SECCION 1, reeutilice el elementoquienessomos, ya que necesitaba generar la misma estructura*/
+  .iframeEnfermedad {
+    width: 150%;
+    margin: 20px; }
+  /*Seccion 2 - ANMAT*/
+  .linksanmat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .alinksanmat {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+    font-style: italic; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+/*Elementos comunes*/
+p {
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  margin: 10px; }
+
+h2 {
+  font-size: 30px;
+  margin: 15px 0;
+  color: #4B6587;
+  text-align: center; }
+
+.h3 {
+  text-align: center;
+  color: #161e54;
+  font-size: 25px;
+  padding: 10px; }
+  .h3_borde {
+    text-align: center;
+    color: #161e54;
+    font-size: 25px;
+    padding: 10px;
+    border: solid; }
+
+h4 {
+  text-align: left;
+  font-size: 18px;
+  color: black;
+  font-style: italic;
+  padding: 10px; }
+
+/*ELEMENTOS SECCION QUIENES SOMOS */
+main section div p {
+  text-align: center;
+  font-size: 15px;
+  margin: 30px; }
+
+/*ELEMENTOS SECCION INDEX-RECETAS*/
+.h2recetas {
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+  color: #4B6587;
+  border-style: solid;
+  border-color: black;
+  background-color: #F7F6F2; }
+
+.animacioncursos {
+  transform: scale(1, 1); }
+
+.animacioncursos:hover {
+  transform: scale(1.05, 1.05); }
+
+/*CONTACTO*/
+@media screen and (min-width: 751px) {
+  .btnEnviar {
+    padding: 10px;
+    background-color: #b3b3b3;
+    color: #e9e8e8;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 60px; } }
+
+@media screen and (max-width: 750px) {
+  .btnEnviar {
+    padding: 10px;
+    background-color: #b3b3b3;
+    color: #e9e8e8;
+    margin-bottom: 10px;
+    width: 110px;
+    height: 50px; } }
+
+@media screen and (max-width: 750px) {
+  .btnCancelar {
+    padding: 10px;
+    background-color: #db6060;
+    color: #e9e8e8;
+    margin-bottom: 10px;
+    width: 110px;
+    height: 50px; } }
+
+@media screen and (min-width: 751px) {
+  .btnCancelar {
+    padding: 10px;
+    background-color: #db6060;
+    color: #e9e8e8;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 60px; } }
+
+/*MENSAJES CON EXTEND EN INDEX QUIENES SOMOS Y NOTICIAS ENFERMEDAD*/
+.mensaje, .mensajeQS, .mensajeEN {
+  font-size: 17px;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+
+.mensajeQS {
+  color: #010131;
+  background-color: #f1eeea; }
+
+.mensajeEN {
+  color: #423c6d;
+  background-color: #f3e6db; }

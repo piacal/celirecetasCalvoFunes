@@ -1,0 +1,63 @@
+@media screen and (min-width:751px) {
+
+   
+    .listaul{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        
+    }
+
+    /*INDEX*/
+    /*ELEMENTOS SECCION QUIENES SOMOS */
+
+    Main section div h2{
+        text-align: center;
+        margin-bottom: 20px;
+    
+    }
+
+    .img_quienessomos{
+        width: 100%;
+        margin: 20px;
+    }
+    
+    .elementoQuienesSomos{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+       
+    }
+    
+    /*NOTICIAS*/
+
+    /*PARA LA SECCION 1, reeutilice el elementoquienessomos, ya que necesitaba generar la misma estructura*/
+    
+    .iframeEnfermedad{
+        width: 150%;
+        margin: 20px;
+    }
+    
+    /*Seccion 2 - ANMAT*/
+    
+    .linksanmat{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+
+    .alinksanmat {
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        margin: 20px;
+        font-style: italic;
+    
+    }
+
+}

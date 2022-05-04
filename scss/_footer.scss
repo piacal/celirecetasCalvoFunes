@@ -1,0 +1,38 @@
+/*FOOTER*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $colorFooter;
+        
+}
+
+.p_footer{
+    color: white;
+}
+
+
+.bi-facebook{
+    color: rgb(97, 97, 214);
+    
+    font-size: 30px;
+    
+    
+}
+
+.bi-instagram{
+    
+    color: rgb(182, 66, 182);
+    font-size: 30px;
+
+}
+
+.bilogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  
+}

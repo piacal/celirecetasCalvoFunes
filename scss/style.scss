@@ -1,0 +1,177 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+@import "./variables";
+@import "./header";
+@import "./footer";
+@import "./mobile";
+@import "./escritorio";
+
+*{ 
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*Elementos comunes*/
+
+p{ 
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px;
+}
+
+h2{
+    font-size: 30px;
+    margin: 15px 0;
+    color: #4B6587;
+    text-align: center;
+}
+
+.h3{
+    text-align: center;
+    color: rgb(22, 30, 84);
+    font-size: 25px;
+    padding: 10px;
+
+    &_borde {
+        text-align: center;
+        color: rgb(22, 30, 84);
+        font-size: 25px;
+        padding: 10px;
+        border: solid;
+    }
+}
+
+h4 {
+    text-align: left;
+    font-size: 18px;
+    color: black;
+    font-style: italic;
+    padding: 10px;
+    
+}
+
+
+
+/*ELEMENTOS SECCION QUIENES SOMOS */
+
+
+main section div p{
+    text-align: center;
+    font-size: 15px;
+    margin: 30px;
+}
+
+/*ELEMENTOS SECCION INDEX-RECETAS*/
+
+.h2recetas{
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    color: #4B6587;
+    border-style: solid;
+    border-color: black;
+    background-color: #F7F6F2
+}
+
+
+.animacioncursos{
+    transform: scale(1 , 1);
+}
+
+.animacioncursos:hover {
+    transform: scale(1.05 , 1.05);
+}
+
+
+/*CONTACTO*/
+
+@mixin botones ($bgcolor, $colorLetra, $tamanio) {
+
+    padding: 10px;
+    background-color: $bgcolor;
+    color: $colorLetra;
+    margin-bottom: 10px;
+    
+    @if $tamanio == "sm"{
+        width: 110px;
+        height: 50px;
+    }
+
+    @else if $tamanio == "md"{
+        height: 55px;
+        width: 130px;
+    }
+    @else if $tamanio == "lg"{
+        width: 150px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width:751px){
+.btnEnviar{
+    @include botones(rgb(179, 179, 179), rgb(233, 232, 232), "lg");
+    
+}
+}
+
+@media screen and ( max-width:750px){
+    .btnEnviar{
+        @include botones(rgb(179, 179, 179), rgb(233, 232, 232), "sm");
+        
+    }
+}
+
+
+@media screen and (max-width:750px) {
+.btnCancelar{
+    @include botones(rgb(219, 96, 96), rgb(233, 232, 232) , "sm")
+}
+}
+
+@media screen and (min-width:751px){
+    .btnCancelar{
+        @include botones(rgb(219, 96, 96), rgb(233, 232, 232) , "lg")
+    }
+    }
+
+
+
+
+/*MENSAJES CON EXTEND EN INDEX QUIENES SOMOS Y NOTICIAS ENFERMEDAD*/
+
+.mensaje{
+    font-size: 17px;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mensajeQS{
+    @extend .mensaje;
+    color: rgb(1, 1, 49);
+    background-color: rgb(241, 238, 234);
+
+}
+
+.mensajeEN{
+    @extend .mensaje;
+    color: rgb(66, 60, 109);
+    background-color: rgb(243, 230, 219);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
