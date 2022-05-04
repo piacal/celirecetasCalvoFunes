@@ -56,6 +56,12 @@ if (inscricionCurso === "no"){
 
 //FILTROS PARA LA SECCION RECETAS 
 
+// function receta(nombre, ingredientes) {
+
+//     console.log('La receta es: ' + nombre);
+// }
+
+
 class recetas {
     constructor (nombre, ingredientes, preparacion, tiempo, tipo) {
     this.nombre = nombre;
@@ -64,8 +70,9 @@ class recetas {
     this.tiempo = tiempo;
     this.tipo = tipo;
     }
+
     mostrar(){
-        console.log('La receta es: ' + this.nombre);
+        return this.nombre
     }
 }
 
