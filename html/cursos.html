@@ -50,9 +50,13 @@
 
     <main>
         <h2>CURSOS</h2>
+        <div>
+          <h4>SELECCIONE EL CURSO PARA VER LA COTIZACION</h4>
+          <p class="mensajeQS" id="informacionPresupuesto"></p>
+        </div>
         <div class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-            <div class="col animacioncursos">
+            <div class="col animacioncursos" id="cursoPanaderia">
               <div class="card-body">
                 <h3 class="card-title">PANADERIA</h3>
               <div class="card">
@@ -63,7 +67,7 @@
               </div>
             </div>
             </div>
-            <div class="col animacioncursos">
+            <div class="col animacioncursos" id="cursoPasteleria">
                 <div class="card-body">
                     <h3 class="card-title">PASTELERIA</h3>
                   <div class="card">
@@ -74,7 +78,7 @@
                   </div>
                 </div>
             </div>
-            <div class="col animacioncursos">
+            <div class="col animacioncursos" id="cursoGastronomia">
                 <div class="card-body">
                     <h3 class="card-title">GASTRONOMIA</h3>
                   <div class="card">
@@ -85,7 +89,7 @@
                   </div>
                 </div>
             </div>
-            <div class="col animacioncursos">
+            <div class="col animacioncursos" id="cursoCocineritos">
                 <div class="card-body">
                     <h3 class="card-title">COCINERITOS</h3>
                   <div class="card">
@@ -114,5 +118,6 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init(); </script>
+    <script src="../JS/cursos.js"></script>
 </body>
 </html>

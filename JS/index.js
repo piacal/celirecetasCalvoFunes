@@ -56,7 +56,7 @@ tipoRecetas(RECETAS, contenedor);
 
 //INGRESO A LA PAGINA COMO ESTUDIANTE O NO
 
-let inscricionCurso = prompt("¿Usted está inscripto a un curso?");
+/* let inscricionCurso = prompt("¿Usted está inscripto a un curso?");
 
 if (inscricionCurso === "si"){
     let usuario = prompt ("Ingrese usuario");
@@ -108,7 +108,7 @@ if (inscricionCurso === "no"){
     if(averiguarCurso === "no"){
         alert("Bienvenido a Celirecetas, usted podra ver todas las recetas que tenemos disponibles");
     }
-} 
+}  */
 
 //FILTROS PARA LA SECCION RECETAS 
 
@@ -157,6 +157,4 @@ for(const recetas of recetaslista){
         }
     }
 }
-
-
 

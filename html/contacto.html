@@ -52,29 +52,30 @@
         <h2>CONTACTO</h2>
         <section>
             <p class="animate__animated animate__shakeY">PODES CONTACTARTE CON NOSOTROS COMPETANDO EL SIGUIENTE FORMULARIO</p>
-            
-            <div class="container container-sm container-md container-lg">
-            <div class="mb-3">
-              <label for="formGroupExampleInput" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre">
+            <form>
+            <div  class="container container-sm container-md container-lg" >
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre">
+              </div>
+              <div >
+                <label for="inputEmail4" class="form-label">Mail</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Ingrese su mail">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="sin 0 y sin 15">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Consulta</label>
+                <textarea class="form-control" placeholder="Escriba su consulta aquí" id="floatingTextarea2" style="height: 100px"></textarea>
+              </div>
+              <div>
+              <input type="submit" id="btnEnviar" value="ENVIAR"/>
+              <button class="btnCancelar">CANCELAR</button>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="inputEmail4" class="form-label">Mail</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Ingrese su mail">
-            </div>
-            <div class="mb-3">
-              <label for="formGroupExampleInput2" class="form-label">Telefono</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="sin 0 y sin 15">
-            </div>
-            <div class="mb-3">
-              <label for="formGroupExampleInput2" class="form-label">Consulta</label>
-              <textarea class="form-control" placeholder="Escriba su consulta aquí" id="floatingTextarea2" style="height: 100px"></textarea>
-            </div>
-            <button class="btnEnviar">ENVIAR</button>
-            <button class="btnCancelar">CANCELAR</button>
-            </div>
-            
-       
+          </form>
         </section>
 
     </main>
@@ -93,5 +94,6 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init(); </script>
+    <script src="../JS/contacto.js"></script>
 </body>
 </html>
