@@ -53,7 +53,7 @@
         <section>
             <p class="animate__animated animate__shakeY">PODES CONTACTARTE CON NOSOTROS COMPETANDO EL SIGUIENTE FORMULARIO</p>
             <form>
-            <div  class="container container-sm container-md container-lg" >
+            <div class="container container-sm container-md container-lg" >
               <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre">
@@ -71,8 +71,8 @@
                 <textarea class="form-control" placeholder="Escriba su consulta aquí" id="floatingTextarea2" style="height: 100px"></textarea>
               </div>
               <div>
-              <input type="submit" id="btnEnviar" value="ENVIAR"/>
-              <button class="btnCancelar">CANCELAR</button>
+              <input type="submit" id="btnEnviar" class="btnEnviar" value="ENVIAR"/>
+              <input type="submit" class="btnCancelar" value="CANCELAR"></input>
               </div>
             </div>
           </form>
@@ -94,6 +94,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init(); </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../JS/contacto.js"></script>
 </body>
 </html>

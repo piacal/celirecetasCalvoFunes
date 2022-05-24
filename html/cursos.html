@@ -50,60 +50,45 @@
 
     <main>
         <h2>CURSOS</h2>
-        <div>
-          <h4>SELECCIONE EL CURSO PARA VER LA COTIZACION</h4>
-          <p class="mensajeQS" id="informacionPresupuesto"></p>
-        </div>
         <div class="container">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-            <div class="col animacioncursos" id="cursoPanaderia">
-              <div class="card-body">
-                <h3 class="card-title">PANADERIA</h3>
-              <div class="card">
-                <img src="../img/06. MASA MADRE.png" class="card-img-top" alt="PANES">
-                <div class="card-body">
-                   <p class="card-text">Conocerás los procedimientos básicos y avanzados para su aplicación en diferentes preparaciones.</p>
-                </div>
-              </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="cursos">
+        </div>
+        </div>
+      
+      <button type="button" class="btnEnviar" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          CARRITO
+      </button>
+  
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">CURSOS DEL CARRITO</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">NOMBRE</th>
+                      <th scope="col">CANTIDAD</th>
+                      <th scope="col">PRECIO</th>
+                      <th scope="col">IMAGEN</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tablaCarrito">
+                  </tbody>
+                </table>
             </div>
-            <div class="col animacioncursos" id="cursoPasteleria">
-                <div class="card-body">
-                    <h3 class="card-title">PASTELERIA</h3>
-                  <div class="card">
-                    <img src="../img/07. torta.png" class="card-img-top" alt="PASTELERIA">
-                    <div class="card-body">
-                       <p class="card-text">Instruimos a las personas en la utilización de nuevas técnicas de pastelería, implementando materias primas de vanguardia. Vas a poder realizar postres y productos de pastelería novedosos y de calidad todo sin gluten</p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div class="col animacioncursos" id="cursoGastronomia">
-                <div class="card-body">
-                    <h3 class="card-title">GASTRONOMIA</h3>
-                  <div class="card">
-                    <img src="../img/13. Gastronomía.png" class="card-img-top" alt="GASTRONOMIA">
-                    <div class="card-body">
-                       <p class="card-text">Capacitamos a los alumnos para desempeñarse como cocineros y profesionales gastronómico, en los servicios caterings y eventos</p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div class="col animacioncursos" id="cursoCocineritos">
-                <div class="card-body">
-                    <h3 class="card-title">COCINERITOS</h3>
-                  <div class="card">
-                    <img src="../img/14. Cocineritos.png" class="card-img-top" alt="COCINERITOS">
-                    <div class="card-body">
-                       <p class="card-text">Brindamos una capacitación integral en cocina, pastelería y panadería, seguridad e higiene alimenticia, nutrición para niños atendiendo así, a las necesidades recreativas sociales de los niños.</p>
-                    </div>
-                  </div>
-                </div>
+            <div class="modal-footer">
+              <button type="button" class="btnCancelar" data-bs-dismiss="modal">CERRAR</button>
+              <button type="button" id="btnComprar" class="btnEnviar" data-bs-dismiss="modal">COMPRAR</button>
             </div>
           </div>
-      
+        </div>
+      </div>
     </main>
-
 
     <footer>
         <div class="container">
@@ -118,6 +103,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init(); </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../JS/cursos.js"></script>
 </body>
 </html>
