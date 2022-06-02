@@ -1,161 +1,155 @@
-/* const cursoPanaderia = document.getElementById("cursoPanaderia");
-cursoPanaderia.addEventListener("click", () => {
-    const informacionPresupuesto = document.getElementById("informacionPresupuesto");
-    informacionPresupuesto.innerHTML = `EL CURSO DE PANADERIA TIENE UN COSTO DE $ 2000`;
-});
-
-const cursoPasteleria = document.getElementById("cursoPasteleria");
-cursoPanaderia.addEventListener("click", () => {
-    const informacionPresupuesto = document.getElementById("informacionPresupuesto");
-    informacionPresupuesto.innerHTML = `EL CURSO DE PASTELERIA TIENE UN COSTO DE $ 2500`;
-});
-
-const cursoCocineritos = document.getElementById("cursoCocineritos");
-cursoCocineritos.addEventListener("click", () => {
-    const informacionPresupuesto = document.getElementById("informacionPresupuesto");
-    informacionPresupuesto.innerHTML = `EL CURSO DE COCINERITOS TIENE UN COSTO DE $ 1500`;
-});
-
-const cursoGastronomia = document.getElementById("cursoGastronomia");
-cursoGastronomia.addEventListener("click", () => {
-    const informacionPresupuesto = document.getElementById("informacionPresupuesto");
-    informacionPresupuesto.innerHTML = `EL CURSO DE GASTRONOMIA TIENE UN COSTO DE $ 1000`;
-}); */
-
-const contenedor = document.getElementById("cursos");
-const tablaCarrito = document.getElementById("tablaCarrito");
-const carrito = [];
-
-const CURSOS = [
-  {
-    id: 1,
-    nombre: "PANADERIA",
-    precio: 2000,
-    lugaresDisponibles: 10,
-    descripcion:
-      "Conocerás los procedimientos básicos y avanzados para su aplicación en diferentes preparaciones.",
-    imagen:
-      "https://www.proveedores.com/articulos/wp-content/uploads/2016/09/pansingluten.jpg",
-  },
-
-  {
-    id: 2,
-    nombre: "PASTELERIA",
-    precio: 2500,
-    lugaresDisponibles: 10,
-    descripcion:
-      "Instruimos a las personas en la utilización de nuevas técnicas de pastelería, implementando materias primas de vanguardia. Vas a poder realizar postres y productos de pastelería novedosos y de calidad todo sin gluten",
-    imagen:
-      "https://www.cucinare.tv/wp-content/uploads/2018/08/Gout-Gluten-free.jpg",
-  },
-
-  {
-    id: 3,
-    nombre: "COCINERITOS",
-    precio: 1500,
-    lugaresDisponibles: 10,
-    descripcion:
-      "Brindamos una capacitación integral en cocina, pastelería y panadería, seguridad e higiene alimenticia, nutrición para niños atendiendo así, a las necesidades recreativas sociales de los niños.",
-    imagen:
-      "https://i.pinimg.com/170x/d8/6f/30/d86f30b54255133efd1f7497045b99e6.jpg",
-  },
-
-  {
-    id: 4,
-    nombre: "GASTRONOMIA",
-    precio: 1000,
-    lugaresDisponibles: 10,
-    descripcion:
-      "Capacitamos a los alumnos para desempeñarse como cocineros y profesionales gastronómico, en los servicios caterings y eventos",
-    imagen:
-      "https://www.niddk.nih.gov/-/media/Images/Health-Information/Digestive-Diseases/healthy-salad-bowl_975x650.jpg",
-  },
-];
-
-const getCard = (item) => {
-  return `
-        <div class="col animacioncursos "card"" id="cursoPanaderia" style="width: 18rem;">
-            <div class="card-body">
-                <h3 class="card-title">${item.nombre}</h3>
-            <div class="card">
-                <img src="${item.imagen}" class="card-img-top" alt="${
-    item.nombre
-  }">
-            <div class="card-body">
-                <p class="card-text">${item.descripcion}</p>
-            <div class="card-body">
-                <p class="card-text">$${item.precio}</p>
-                <button onclick=agregarCarrito(${item.id}) class="btn ${
-    item.lugaresDisponibles ? "btn-primary" : "btn-secondary"
-  }" ${!item.lugaresDisponibles ? "disabled" : ""} >Agregar al carrito</button>
-            </div>
-            </div>
-            </div>
-            </div>
-        </div>
-
-    `;
-};
-
-const getRow = (item) => {
-  return `
-    <tr>
-        <th scope="row">${item.id}</th>
-        <td>${item.nombre}</td>
-        <td>${item.cantidad}</td>
-        <td>$${item.precio * item.cantidad} ($${item.precio})</td>
-        <td><img style="width:20px" src="${item.imagen}" alt="imagen"></td>
-    </tr>
-        `;
-};
-
-const cargarProductos = (datos, nodo, esTabla) => {
-  let acumulador = "";
-  datos.forEach((el) => {
-    acumulador += esTabla ? getRow(el) : getCard(el);
-  });
-  nodo.innerHTML = acumulador;
-};
-
-const agregarCarrito = (id) => {
-  const seleccion = CURSOS.find((item) => item.id === id);
-  const busqueda = carrito.findIndex((el) => el.id === id);
-
-  if (busqueda === -1) {
-    carrito.push({
-      id: seleccion.id,
-      nombre: seleccion.nombre,
-      precio: seleccion.precio,
-      cantidad: 1,
-      imagen: seleccion.imagen,
-    });
-  } else {
-    carrito[busqueda].cantidad = carrito[busqueda].cantidad + 1;
+//Definicion de clase de Cursos
+class Curso {
+  constructor(nombre, precio, descripcion, lugaresDisponibles, imagen) {
+    this.nombre = nombre;
+    this.precio = precio;
+    this.descripcion = descripcion;
+    this.lugaresDisponibles = lugaresDisponibles;
+    this.imagen = imagen;
+    this.cant = 1;
   }
+}
 
-  cargarProductos(carrito, tablaCarrito, true);
-};
+//definicion de variables
+let cursos = [];
+localStorage.setItem('carrito', JSON.stringify([]));
+let divProductos = document.getElementById("divProductos");
+let botonCarrito = document.getElementById("botonCarrito");
+let modalBody = document.getElementById("modalbody");
+let botonFinalizarCompra = document.getElementById("botonFinalizarCompra");
+let parrafoCompra = document.getElementById('precioTotal');
+let acumulador;
 
-cargarProductos(CURSOS, contenedor, false);
-
-let btnComprar = document.getElementById("btnComprar");
-
-btnComprar.addEventListener("click", () => {
-  Swal.fire({
-    title: "Quiere terminar con la compra?",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonText: "Sí, comprar",
-    cancelButtonText: "No, quiero agregar otro curso",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Su compra fue realizada con éxito",
-        showConfirmButton: false,
-        timer: 5000,
-      });
-    }
-  });
+//aplico fetch para una api interna
+fetch('../cursos.json')
+.then(response => response.json())
+.then(dataCursos => {
+   dataCursos.forEach((cursoEnArray, indice)=> {
+      //Card de bootstrap para generar mis productos en el HTML
+      divProductos.innerHTML += `
+      <div class="col animacioncursos "card"" id="curso${indice}" style="width: 18rem;">
+      <div class="card-body">
+          <h3 class="card-title">${cursoEnArray.nombre}</h3>
+      <div class="card">
+          <img src="${cursoEnArray.imagen}" class="card-img-top" alt="${cursoEnArray.nombre}">
+      <div class="card-body">
+          <p class="card-text">${cursoEnArray.descripcion}</p>
+      <div class="card-body">
+          <p class="card-text">$${cursoEnArray.precio}</p>
+          <button id="boton${indice}" class="btn btn-dark"><i class="fas fa-cart-plus fa-1x"></i></button>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+    `
 });
+
+dataCursos.forEach((cursoEnArray, indice) => {
+       document.getElementById(`boton${indice}`).addEventListener('click', () => {
+            if(cursos.find(curso => curso.nombre == cursoEnArray.nombre)) {
+                let index = cursos.findIndex(curso => curso.nombre == cursoEnArray.nombre);
+                cursos[index].cant++;
+                localStorage.setItem('carrito', JSON.stringify(cursos));
+            } else {
+                let nuevoCurso = new Curso(cursoEnArray.nombre, 
+                  cursoEnArray.precio, cursoEnArray.descripcion, cursoEnArray.lugaresDisponibles, cursoEnArray.imagen);
+                cursos.push(nuevoCurso);
+                localStorage.setItem('carrito', JSON.stringify(cursos))
+            }
+            
+       })
+   })
+})
+
+function compraTotal(cursosDelStorage) {
+  acumulador = 0;
+  cursosDelStorage.forEach((cursoCarrito) => {
+      acumulador += cursoCarrito.precio * cursoCarrito.cant
+  })
+
+  if(acumulador == 0) {
+      parrafoCompra.innerHTML = "";
+      modalBody.innerHTML = "<p>No hay productos agregados en el carrito </p>" 
+  }
+ 
+}
+
+//Funcion poder eliminar, sumar o restar cantidad de curso
+function cargarCarrito(cursosDelStorage) {
+  cursosDelStorage.forEach((cursoCarrito, indice) => {
+      document.getElementById(`botonEliminar${indice}`).addEventListener('click', () => {
+          document.getElementById(`cursoCarrito${indice}`).remove();
+          cursos.splice(indice, 1);
+          localStorage.setItem('carrito', JSON.stringify(cursos));
+          cargarCursos(JSON.parse(localStorage.getItem('carrito')))
+      })
+  })
+
+  cursosDelStorage.forEach((cursoCarrito, indice) => {
+      document.getElementById(`sum${indice}`).addEventListener('click', () => {
+          if(cursos[indice].cant < cursos[indice].lugaresDisponibles) {
+              cursos[indice].cant++;
+              localStorage.setItem('carrito', JSON.stringify(cursos));
+              cargarCursos(JSON.parse(localStorage.getItem('carrito')))
+              
+          }
+      })
+  })
+
+  cursosDelStorage.forEach((cursoCarrito, indice) => {
+      document.getElementById(`rest${indice}`).addEventListener('click', () => {
+          if(cursos[indice].cant > 1) {
+              cursos[indice].cant--;
+              localStorage.setItem('carrito', JSON.stringify(cursos));
+              cargarCursos(JSON.parse(localStorage.getItem('carrito')))
+          }
+      })
+  })
+  
+}
+
+//Visualizacion de mi carrito de compra
+function cargarCursos(cursosDelStorage) {
+
+  modalBody.innerHTML = " ";  
+  cursosDelStorage.forEach((cursoCarrito, indice) => {
+      
+      modalBody.innerHTML += `
+          <div class="card border-primary mb-3" id ="cursoCarrito${indice}" style="max-width: 540px;">
+              <div class="row g-0">
+                  <div class="col-md-4">
+                      <img src="${cursoCarrito.imagen}" class="img-fluid rounded-start" alt="${cursoCarrito.nombre}">
+              </div>
+          <div class="col-md-8">
+              <div class="card-body">
+             
+              <h5 class="card-title">${cursoCarrito.nombre}</h5>
+              <div class="row">
+                  <p class="card-text">Cantidad: ${cursoCarrito.cant}</p>
+                  <p class="card-text">Precio a pagar: ${cursoCarrito.cant * cursoCarrito.precio}</p>
+                  <button class= "btn btn-outline-secondary" id="sum${indice}"><i class="fas fa-plus"></i></button>
+                  <button class= "btn btn-outline-secondary" id="rest${indice}"><i class="fas fa-minus"></i></button> 
+              </div>
+              <button class= "btn btn-danger" id="botonEliminar${indice}"><i class="fas fa-trash-alt"></i></button>
+          </div>
+          </div>
+          </div>
+      </div>
+  `
+});
+
+cargarCarrito(cursosDelStorage);
+compraTotal(cursosDelStorage);
+
+}
+
+botonCarrito.addEventListener('click', () => {
+  let cursosDelStorage = JSON.parse(localStorage.getItem('carrito'));
+  cargarCursos(cursosDelStorage);
+})
+
+botonFinalizarCompra.addEventListener('click', () => {
+    localStorage.setItem('carrito', JSON.stringify([]));
+    swal("Gracias por su compra!", "Los productos seran enviados en la brevedad", "success");
+})

@@ -3,25 +3,25 @@ const contenedor = document.getElementById("recetas");
 
 const RECETAS = [
     {   
-        imagen: "https://www.recetasdesbieta.com/wp-content/uploads/2018/09/Como-hacer-pizza-casera-rapida-con-masa-de-pizza-sin-repos-1.jpg",
+        imagen: "../img/02. Salados.png",
         nombre: "SALADO",
         descripcion: "Pizzas, tartas, empanadas, etc",
     
         },
         { 
-        imagen: "https://abmauri.es/wp-content/uploads/2020/08/articulo-1-imagen.jpg",
+        imagen: "../img/05. PAN.png",
         nombre: "PANES",
         descripcion: "Lactal, masa madre, hamburguesa, etc",
     
     },
     { 
-        imagen: "https://www.pcrm.org/sites/default/files/2019-12/Untitled%20%283%29_1.jpg",
+        imagen: "../img/03. Ensalada.png",
         nombre: "ENSALADA",
         descripcion: "Variedades para tus comidas",
     
     },
     {
-        imagen: "https://vivanatur.co/wp-content/uploads/2020/12/Cheessecake-frutos-rojos.jpg",
+        imagen: "../img/04. Dulce.png",
         nombre: "DULCE",
         descripcion: "Tortas, lemmon pie, cheesecake, etc",
     

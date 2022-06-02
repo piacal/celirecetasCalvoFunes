@@ -4,7 +4,7 @@ const RECETAS = [
   {
     nombre: "BROWNIE",
     imagen:
-      "https://www.laurafuentes.soy/wp-content/uploads/2016/08/Brownies-RC-2.jpg",
+      "../img/08. Brownie.png",
     ingredientes: [
       "100g de manteca",
       "100 g de chocolate apto para celíacos",
@@ -26,7 +26,7 @@ const RECETAS = [
   {
     nombre: "CHEESECAKE",
     imagen:
-      "https://t2.rg.ltmcdn.com/es/posts/1/4/9/cheesecake_de_frutos_rojos_73941_orig.jpg",
+      "../img/09. Cheesecake.png",
     ingredientes: [
       "225 gramos Galletas de Vainilla SIN TACC",
       "195 gramos Azucar",
@@ -54,7 +54,7 @@ const RECETAS = [
   {
     nombre: "PIZZA",
     imagen:
-      "https://www.recetasdesbieta.com/wp-content/uploads/2018/09/Como-hacer-pizza-casera-rapida-con-masa-de-pizza-sin-repos-1.jpg",
+      "../img/15. Pizza.png",
     ingredientes: [
       "280 gramos Premezcla Santa Maria",
       "35 gramos Levadura fresca",
@@ -82,7 +82,7 @@ const RECETAS = [
   {
     nombre: "BOCADITOS DE MUZZARELLA",
     imagen:
-      "https://2.bp.blogspot.com/-RfllgHwNi6c/WZVlq7Y7yzI/AAAAAAAANA8/eZhvc8_wJtguyFdtLmzhiMOZm8TpMzhbgCLcBGAs/s400/moozarella.jpg",
+      "../img/16. Bastoncitos.png",
     ingredientes: [
       "250 gramos Muzzarella",
       "1 Huevo",

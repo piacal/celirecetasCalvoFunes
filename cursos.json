@@ -1,0 +1,33 @@
+[
+  {
+    "nombre": "PANADERIA",
+    "precio": 2000,
+    "descripcion": "Conocerás los procedimientos básicos y avanzados para su aplicación en diferentes preparaciones.",
+    "lugaresDisponibles": 10,
+    "imagen": "../img/06. MASA MADRE.png"
+  },
+
+  {
+    "nombre": "PASTELERIA",
+    "precio": 2500,
+    "descripcion": "Instruimos a las personas en la utilización de nuevas técnicas de pastelería, implementando materias primas de vanguardia. Vas a poder realizar postres y productos de pastelería novedosos y de calidad todo sin gluten",
+    "lugaresDisponibles": 10,
+    "imagen": "../img/07. torta.png"
+  },
+
+  {
+    "nombre": "COCINERITOS",
+    "precio": 1500,
+    "descripcion": "Brindamos una capacitación integral en cocina, pastelería y panadería, seguridad e higiene alimenticia, nutrición para niños atendiendo así, a las necesidades recreativas sociales de los niños.",
+    "lugaresDisponibles": 10,
+    "imagen": "../img/14. Cocineritos.png"
+  },
+
+  {
+    "nombre": "GASTRONOMIA",
+    "precio": 1000,
+    "descripcion": "Capacitamos a los alumnos para desempeñarse como cocineros y profesionales gastronómico, en los servicios caterings y eventos",
+    "lugaresDisponibles": 10,
+    "imagen": "../img/13. Gastronomía.png"
+  }
+]
