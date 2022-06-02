@@ -1,5 +1,3 @@
-const { reset } = require("nodemon");
-
 class Persona{
     constructor(nombre, email, telefono, consulta){
         this.nombre = nombre;
@@ -26,5 +24,6 @@ btnEnviar.addEventListener("click", (e) => {
     listaPersonas.push(persona);
   
     localStorage.setItem('Personas', JSON.stringify(listaPersonas));   
-    reset();
+    document.getElementById("form").reset();
 })
+
