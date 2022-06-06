@@ -144,12 +144,21 @@ compraTotal(cursosDelStorage);
 
 }
 
+let cursosDelStorage;
+
 botonCarrito.addEventListener('click', () => {
-  let cursosDelStorage = JSON.parse(localStorage.getItem('carrito'));
+  cursosDelStorage = JSON.parse(localStorage.getItem('carrito'));
   cargarCursos(cursosDelStorage);
 })
 
 botonFinalizarCompra.addEventListener('click', () => {
+    if(cursosDelStorage.length == 0){
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'El carrito esta vacio',
+          })
+    }else{
     localStorage.setItem('carrito', JSON.stringify([]));
-    swal("Gracias por su compra!", "Los productos seran enviados en la brevedad", "success");
+    swal("Gracias por su compra!", "Los productos seran enviados en la brevedad", "success");}
 })
